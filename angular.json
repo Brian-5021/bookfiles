@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "BookFiles"
+    }
+  },
+  "defaultProject": "BookFiles",
+  "cli": {
+    "analytics": "c38b6f2f-1523-4552-9658-325d2820e32b"
+  }
 }

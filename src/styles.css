@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: linear-gradient(90deg, rgba(36, 33, 0, 0.40940126050420167) 0%, rgba(121, 112, 9, 0.4318102240896359) 59%, rgba(255, 239, 0, 0.29175420168067223) 100%);
+}
+
+.img-collection {
+    width: 50%;
+    margin: auto;
+}
