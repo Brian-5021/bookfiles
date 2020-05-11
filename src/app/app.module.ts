@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
 import { LibroComponent } from './components/libro/libro.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LibroComponent } from './components/libro/libro.component';
     HomeComponent,
     NavbarComponent,
     SearchComponent,
-    LibroComponent
+    LibroComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,

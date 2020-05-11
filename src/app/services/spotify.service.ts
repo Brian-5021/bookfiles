@@ -24,6 +24,6 @@ export class SpotifyService {
   }
 
   searchBooks(termino: string) {
-    return this.getQuery(`volumes?q=${termino}&orderBy=newest&key=AIzaSyAzZgIroYJzAjdf4UmLJR9Kk7-FjuD2T0o`);
+    return this.getQuery(`volumes?q=${termino}&maxResults=20&key=AIzaSyAzZgIroYJzAjdf4UmLJR9Kk7-FjuD2T0o`);
   }
 }
