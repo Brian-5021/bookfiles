@@ -24,6 +24,11 @@ export class SpotifyService {
   }
 
   searchBooks(termino: string) {
+
+    if (termino === '') {
+      console.log('no se ha mandado ningún parametro');
+    }else {
     return this.getQuery(`volumes?q=${termino}&maxResults=20&key=AIzaSyAzZgIroYJzAjdf4UmLJR9Kk7-FjuD2T0o`);
+    }
   }
 }

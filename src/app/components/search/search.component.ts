@@ -11,18 +11,30 @@ export class SearchComponent implements OnInit {
 
   libros: any[] = [];
 
+  loading: boolean;
+
+  mensaje: string;
+
   constructor(private http: SpotifyService) { }
 
   ngOnInit(): void {
   }
 
   busquedaLibro(termino: string) {
-    console.log(termino);
 
+    if (termino === '' ){
+    this. mensaje = 'POR FAVOR BUSCA UN LIBRO PARA RECIBIR RESULTADOS';
+
+    }
+    else{
+    this.loading = true;
     this.http.searchBooks(termino).subscribe((data: any) => {
-      console.log(data.items);
+
       this.libros = data.items;
+      this.loading = false;
     });
   }
+
+}
 
 }

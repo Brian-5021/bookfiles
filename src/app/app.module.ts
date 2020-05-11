@@ -16,6 +16,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
 import { LibroComponent } from './components/libro/libro.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     NavbarComponent,
     SearchComponent,
     LibroComponent,
-    NoimagePipe
+    NoimagePipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
