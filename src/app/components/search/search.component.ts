@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
+import { RouterModule, Router  } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class SearchComponent implements OnInit {
 
   mensaje: string;
 
-  constructor(private http: SpotifyService) { }
+  constructor(private http: SpotifyService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -33,8 +34,14 @@ export class SearchComponent implements OnInit {
       this.libros = data.items;
       this.loading = false;
     });
+
   }
 
+}
+
+VerLibro(item: any) {
+  console.log(item);
+  this.router.navigate(['/libro', item]);
 }
 
 }

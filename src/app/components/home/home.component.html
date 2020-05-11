@@ -4,7 +4,7 @@
     <div class="row row-cols-1 row-cols-md-2 ">
         <div class="col mb-4" *ngFor="let item of books">
             <div class="card bg-dark bg-inverse">
-                <img src={{item.volumeInfo.imageLinks.smallThumbnail}} class="card-img-top img-thumbnail img-collection my-3" alt="...">
+                <img [src]="item.volumeInfo.imageLinks.smallThumbnail | noimage" class="card-img-top img-thumbnail img-collection my-3" alt="...">
                 <div class="card-body">
                     <h4 class="card-title text-white">{{item.volumeInfo.title}}</h4>
                     <h6 class="card-title text-muted text-white">{{item.volumeInfo.authors}}</h6>

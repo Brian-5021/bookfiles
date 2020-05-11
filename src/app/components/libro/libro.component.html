@@ -1,1 +1,15 @@
-<p>libro works!</p>
+<div class="card mb-3 bookComp my-5" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img [src]="book.volumeInfo.imageLinks.medium" class="card-img my-5 ml-2" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h4 class="card-title">{{book.volumeInfo.title}}</h4>
+                <h6 class="card-title text-muted">{{book.volumeInfo.authors}}</h6>
+                <p class="card-text">{{book.volumeInfo.description | slice:0:400}}...</p>
+                <p class="card-text"><small class="text-muted">{{book.volumeInfo.categories}}</small></p>
+            </div>
+        </div>
+    </div>
+</div>

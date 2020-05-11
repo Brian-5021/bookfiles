@@ -23,6 +23,10 @@ export class SpotifyService {
     }));
   }
 
+  getBook(id: any) {
+    return this.getQuery(`volumes/${id}?key=AIzaSyAzZgIroYJzAjdf4UmLJR9Kk7-FjuD2T0o`);
+  }
+
   searchBooks(termino: string) {
 
     if (termino === '') {

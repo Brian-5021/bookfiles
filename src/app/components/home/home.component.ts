@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(private _service: SpotifyService) {
     this.loading = true;
     this._service.getBooks().subscribe((data: any) => {
-      // console.log(data);
+      console.log(data);
 
       this.books = data;
       this.loading = false;

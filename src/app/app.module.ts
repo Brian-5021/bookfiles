@@ -1,7 +1,12 @@
 // Angular
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import locales from '@angular/common/locales/es';
+
+// declaración de idioma
+registerLocaleData(locales);
 
 
 // rutas
@@ -33,7 +38,12 @@ import { LoadingComponent } from './shared/loading/loading.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+    useValue: 'Es'
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
