@@ -1,26 +1,47 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 my-5 text-center">
-            <h2>Por favor busca tu libro</h2>
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <!-- <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> -->
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/assets/images/book1.jpg" class="d-block w-100 slideBan" alt="...">
+                        <div class="carousel-caption d-none d-md-block mb-5">
+                            <h5>Digita el nombre del libro</h5>
+                            <div class="col-md-6 searchBook">
+                                <input type="text" class="form-control" #termino (keyup)="busquedaLibro(termino.value)" placeholder="POR FAVOR DIGITA EL NOMBRE DEL LIBRO">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
-        <div class="col-md-6 searchBook">
-            <input type="text" class="form-control" #termino (keyup)="busquedaLibro(termino.value)" placeholder="POR FAVOR DIGITA EL NOMBRE DEL LIBRO">
-        </div>
+
     </div>
 </div>
-{{mensaje}}
 <app-loading *ngIf="loading"></app-loading>
 <div class="container my-5">
     <div class="row">
         <div class="card-columns">
             <div class="card" *ngFor="let item of libros">
-                <img class="img-thumb img-thumbnail img-collection my-3 text-center" src={{item.volumeInfo.imageLinks.thumbnail}}>
+                <img class="img-thumb img-thumbnail img-collection my-3 text-center" [src]="item.volumeInfo.imageLinks.smallThumbnail | noimage">
                 <div class="card-body">
                     <h4 class="card-title">{{item.volumeInfo.title}}</h4>
                     <h4 class="card-title">{{item.volumeInfo.authors}}</h4>
                     <h6 class="card-text">{{item.volumeInfo.description}}</h6>
-                    <a class="btn btn-primary btn-block" href={{item.volumeInfo.previewLink}}>Ver más</a>
-                    <p (click)="VerLibro(item.id)">Revisar</p>
+                    <a class="btn btn-primary btn-block" (click)="VerLibro(item.id)">Ver más</a>
                 </div>
             </div>
         </div>

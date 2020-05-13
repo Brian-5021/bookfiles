@@ -10,16 +10,21 @@ import { SpotifyService } from '../../services/spotify.service';
 export class LibroComponent implements OnInit {
 
   book: any;
+  loading: boolean;
 
   constructor(private route: ActivatedRoute, private service: SpotifyService) {
+    this.loading = true;
     this.route.params.subscribe(params => {
+      // tslint:disable-next-line: no-string-literal
       this.getBook(params['id']);
     });
    }
 
    getBook(id: any) {
+     this.loading = true;
      this.service.getBook(id).subscribe(book => {
      this.book = book;
+     this.loading = false;
      console.log(book);
      });
    }

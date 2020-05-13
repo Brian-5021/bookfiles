@@ -22,6 +22,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LibroComponent } from './components/libro/libro.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { ChangeTextPipe } from './pipes/change-text.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoadingComponent } from './shared/loading/loading.component';
     SearchComponent,
     LibroComponent,
     NoimagePipe,
-    LoadingComponent
+    LoadingComponent,
+    ChangeTextPipe
   ],
   imports: [
     BrowserModule,

@@ -20,3 +20,14 @@ body {
 .bookComp {
     margin: auto;
 }
+
+.textTitle {
+    font-size: 33px;
+    color: white;
+    border: brown 2px;
+    margin: auto;
+}
+
+.slideBan {
+    height: 200px;
+}
